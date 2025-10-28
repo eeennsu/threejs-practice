@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-blue: '#2997FF';
+  --color-blue: #2997ff;
   --color-gray: #86868b;
   --color-gray-100: #94928d;
   --color-gray-200: #afafaf;
@@ -190,7 +190,7 @@
 }
 
 @utility hero-title {
-  @apply text-center text-3xl font-semibold text-gray-100 opacity-0 max-md:mb-10;
+  @apply text-center text-3xl font-semibold text-gray-100 max-md:mb-10;
 }
 
 @utility hiw-title {
@@ -223,4 +223,10 @@
 
 @utility g_fadeIn {
   @apply translate-y-[100px] opacity-0;
+}
+
+#reflection-overlay {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 43%);
+  mix-blend-mode: screen;
+  transform: translate(var(--x, 0), var(--y, 0));
 }
