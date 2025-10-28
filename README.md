@@ -1,0 +1,8 @@
+- vite
+- react
+- typescript
+- eslint
+- prettier
+- FSD (Folder Structure)
+- favicon
+- pnpm
