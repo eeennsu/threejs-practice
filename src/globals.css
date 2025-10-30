@@ -182,11 +182,11 @@
 }
 
 @utility link {
-  @apply text-blue flex translate-y-20 cursor-pointer items-center text-xl opacity-0 hover:underline;
+  @apply text-blue flex cursor-pointer items-center text-xl hover:underline;
 }
 
 @utility control-btn {
-  @apply flex-center ml-4 rounded-full bg-gray-300 p-4 backdrop-blur;
+  @apply flex-center ml-4 rounded-full bg-gray-300 p-4 backdrop-blur cursor-pointer hover brightness-125 transition-all;
 }
 
 @utility hero-title {
@@ -225,8 +225,15 @@
   @apply translate-y-[100px] opacity-0;
 }
 
+@utility screen-max-width {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  position: relative;
+  max-width: 1120px;
+}
+
 #reflection-overlay {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 43%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25), transparent 36%);
   mix-blend-mode: screen;
   transform: translate(var(--x, 0), var(--y, 0));
 }

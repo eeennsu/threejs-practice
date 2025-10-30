@@ -1,9 +1,6 @@
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
 
 import { ScrollTriggerVars, TweenVars, RotationRef, Timeline, TweenTarget } from '@typings/gsap';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const animateWithGsap = (
   target: gsap.DOMTarget,

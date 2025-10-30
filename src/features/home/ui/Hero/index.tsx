@@ -29,12 +29,11 @@ const Hero: FC = () => {
       .from(titleSplit.words, {
         opacity: 0,
         y: 10,
-        duration: 1,
-        delay: 1.3,
+        delay: 0.2,
         transformOrigin: 'center bottom', // 애니메이션이 회전하거나 scale 될 때 기준점을 결정
         scale: 0.95,
         ease: 'power2.out',
-        stagger: 0.1,
+        stagger: 0.04,
       })
       .from(
         '#cta',
