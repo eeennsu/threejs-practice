@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import Hero from '@features/home/ui/Hero';
 import Highlights from '@features/home/ui/Highlights';
+import Model from '@features/home/ui/Model';
 import Navbar from '@features/home/ui/Navbar';
 
 const HomePage: FC = () => {
@@ -10,6 +11,7 @@ const HomePage: FC = () => {
       <Navbar />
       <Hero />
       <Highlights />
+      <Model />
     </main>
   );
 };

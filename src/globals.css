@@ -186,7 +186,7 @@
 }
 
 @utility control-btn {
-  @apply flex-center ml-4 rounded-full bg-gray-300 p-4 backdrop-blur cursor-pointer hover brightness-125 transition-all;
+  @apply flex-center ml-4 cursor-pointer rounded-full bg-gray-300 p-4 brightness-125 backdrop-blur transition-all;
 }
 
 @utility hero-title {
