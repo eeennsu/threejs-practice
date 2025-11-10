@@ -3,16 +3,9 @@ import gsap from 'gsap';
 import { SyntheticEvent, useEffect, useRef, useState, type FC } from 'react';
 
 import { hightlightsSlides } from '@entities/home/consts';
+import { Video } from '@entities/home/types';
 
 import { pauseImg, playImg, replayImg } from '@utils/utilAssets';
-
-type Video = {
-  isEnd: boolean;
-  startPlay: boolean;
-  videoId: number;
-  isLastVideo: boolean;
-  isPlaying: boolean;
-};
 
 const VideoCarousel: FC = () => {
   const videoRef = useRef<(HTMLVideoElement | null)[]>([]);
@@ -161,7 +154,7 @@ const VideoCarousel: FC = () => {
                   className='pointer-events-none'
                   preload='auto'
                   muted
-                  ref={el => videoRef.current[i] = el}
+                  ref={el => (videoRef.current[i] = el)}
                   onEnded={() =>
                     i !== 3 ? handleProcess('video-end', i) : handleProcess('video-last')
                   }
