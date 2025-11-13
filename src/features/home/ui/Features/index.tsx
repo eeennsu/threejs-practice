@@ -1,6 +1,8 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { FC, useEffect, useRef } from 'react';
+import { FC, useRef } from 'react';
+
+import { animateWithGsap } from '@features/home/lib/animations';
 
 import { explore1Img, explore2Img, exploreVideo } from '@utils/utilAssets';
 
@@ -8,69 +10,20 @@ const Features: FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useGSAP(() => {
-    gsap.to('#features_title', {
+    gsap.to('#exploreVideo', {
       scrollTrigger: {
-        trigger: '#features_title',
-        start: 'top center',
-        end: 'bottom center',
+        trigger: '#exploreVideo',
+        toggleActions: 'play pause reverse restart',
+        start: '-10% bottom',
       },
-      y: 0,
-      opacity: 1,
-      delay: 0.3,
-      ease: 'power2.out',
+      onComplete: () => {
+        videoRef?.current?.play();
+      },
     });
 
-    gsap.to('.g_grow', {
-      scrollTrigger: {
-        scrub: 5.5,
-      },
-      scale: 1,
-      opacity: 1,
-      ease: 'power1',
-    });
-
-    gsap.to('.g_text', {
-      scrollTrigger: {
-        trigger: '.g_text',
-        start: 'top top',
-        end: 'center bottom',
-      },
-      y: 0,
-      opacity: 1,
-      ease: 'power2.inOut',
-      duration: 1,
-    });
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef?.current;
-    if (!video) return;
-
-    const handleEnded = () => {
-      gsap.fromTo(
-        '.feature-video',
-        {
-          scale: 1.2,
-          duration: 2,
-          ease: 'power2.out',
-          repeat: -1,
-          yoyo: true,
-        },
-        {
-          scale: 1,
-          duration: 2,
-          ease: 'power2.out',
-          repeat: -1,
-          yoyo: true,
-        },
-      );
-    };
-
-    video?.addEventListener('ended', handleEnded);
-
-    return () => {
-      video?.removeEventListener('ended', handleEnded);
-    };
+    animateWithGsap('#features_title', { y: 0, opacity: 1 });
+    animateWithGsap('.g_grow', { scale: 1, opacity: 1, ease: 'power1' }, { scrub: 5.5 });
+    animateWithGsap('.g_text', { y: 0, opacity: 1, ease: 'power2.inOut', duration: 1 });
   }, []);
 
   return (

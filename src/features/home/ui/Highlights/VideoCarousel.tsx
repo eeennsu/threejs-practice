@@ -104,7 +104,7 @@ const VideoCarousel: FC = () => {
       scrollTrigger: {
         trigger: '#video',
 
-        // 스크롤로 트리거 할 때 어떤 동작을 할지를 제어
+        // 스크롤로 트리거 할 때 어떤 동작을 할지를 제어 (restart: 처음부터 시작, reverse: 역재생)
         // onEnter / onLeave / onEnterBack / onLeaveBack
         toggleActions: 'restart none none none',
       },
