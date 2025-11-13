@@ -61,7 +61,11 @@ const ModelView: FC<IProps> = ({
   size,
 }) => {
   return (
-    <View index={index} id={gsapType} className={cn('size-full', index === 2 && 'right-[-100%]')}>
+    <View
+      index={index}
+      id={gsapType}
+      className={cn('absolute size-full', index === 2 && 'right-[-100%]')}
+    >
       <ambientLight intensity={0.6} />
 
       <PerspectiveCamera makeDefault position={[0, 0, 4]} />

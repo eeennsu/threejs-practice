@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import Features from '@features/home/ui/Features';
 import Hero from '@features/home/ui/Hero';
 import Highlights from '@features/home/ui/Highlights';
 import Model from '@features/home/ui/Model';
@@ -12,6 +13,7 @@ const HomePage: FC = () => {
       <Hero />
       <Highlights />
       <Model />
+      <Features />
     </main>
   );
 };

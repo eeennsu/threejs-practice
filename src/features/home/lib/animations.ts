@@ -1,5 +1,19 @@
+import gsap from 'gsap';
 import { RefObject } from 'react';
 import * as THREE from 'three';
+
+export const animateWithGsap = (
+  target: gsap.TweenTarget,
+  animationProps: gsap.TweenVars,
+  scrollProps?: ScrollTrigger.Vars,
+) => {
+  gsap.to(target, {
+    ...animationProps,
+    scrollTrigger: {
+      ...scrollProps,
+    },
+  });
+};
 
 export const animateWithGsapTimeline = (
   timeline: gsap.core.Timeline,

@@ -174,7 +174,7 @@
 }
 
 @utility feature-video {
-  @apply h-full w-full scale-150 object-cover object-center opacity-0;
+  @apply h-full w-full scale-150 object-cover object-center;
 }
 
 @utility feature-video-container {
